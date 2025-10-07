@@ -2,21 +2,21 @@
 #include <string>
 using namespace std;
 
-// Ini struktur Node buat stack (tumpukan)
+// Ini struktur Node buat stack
 struct Node {
     char data;
     Node* next;
 };
 
-// Fungsi buat masukin data ke stack (Push)
+// Fungsi buat masukin data ke stack
 void push(Node*& top, char data) {
     Node* newNode = new Node{data, top};
     top = newNode;
 }
 
-// Fungsi buat ngeluarin data dari stack (Pop)
+// Fungsi buat ngeluarin data dari stack 
 char pop(Node*& top) {
-    if (top == nullptr) return '\0'; // Stack kosong
+    if (top == nullptr) return '\0'; 
     Node* temp = top;
     char poppedValue = temp->data;
     top = top->next;
@@ -47,6 +47,3 @@ int main() {
     cout << "Teks terbalik: " << reverseString(text) << endl; // Output: ataD rukurts
     return 0;
 }
-
-// Komentar anak SMA:
-// Di sini kita pake stack yang manual pake linked list buat ngebalik string. Jadi hurufnya dimasukin ke tumpukan, terus diambil satu-satu dari atas, jadinya urutannya kebalik. Stack itu LIFO cuy, jadi yang terakhir masuk, yang pertama keluar.
